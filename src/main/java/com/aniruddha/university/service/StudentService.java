@@ -25,8 +25,8 @@ public class StudentService {
 		repo.save(student);
 	}
 	
-	public Student get(Integer id) {
-        return repo.findById(id).get();
+	public Student get(Integer rollNo) {
+        return repo.findById(rollNo).get();
     }
      
     public void delete(Integer id) {

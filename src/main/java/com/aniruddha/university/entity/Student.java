@@ -1,11 +1,14 @@
 package com.aniruddha.university.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Student {
 	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	public int rollNo;
 	public String name;
 	public String dept;
@@ -33,6 +36,8 @@ public class Student {
 		this.name = name;
 		this.dept = dept;
 	}
-	
+	public Student() {
+		
+	}
 	
 }

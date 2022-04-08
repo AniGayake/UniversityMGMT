@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aniruddha.university.entity.Student;
@@ -34,10 +35,10 @@ public class StudentController {
 		return student;
 	}
 	
-	@PutMapping("/student/{id}")
-	public ResponseEntity<?> update(@RequestBody Student student, @PathVariable Integer id){
+	@PutMapping("/students/{id}")
+	public ResponseEntity<?> update(@RequestBody Student student, @PathVariable Integer rollNo){
 		try {
-			Student existStudent = service.get(id);
+			Student existStudent = service.get(rollNo);
 			service.save(student);
 			return new ResponseEntity<> (HttpStatus.OK);
 			
